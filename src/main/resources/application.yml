@@ -7,6 +7,9 @@ spring:
     user:
       name: admin
       password: ${EUREKA_USER_PASSWORD:password}
+logging:
+  level:
+    root: DEBUG
 eureka:
   instance:
     hostname: localhost
