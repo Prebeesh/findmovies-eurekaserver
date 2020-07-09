@@ -1,11 +1,12 @@
 server:
   port: ${PORT:8761}
-security:
-  user:
-    password: ${eureka.password}
 spring:
   application:
     name: FindMovies_EurekaServer
+  security:
+    user:
+      name: admin
+      password: ${EUREKA_USER_PASSWORD:password}
 eureka:
   instance:
     hostname: localhost
@@ -14,4 +15,3 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  password: ${EUREKA_USER_PASSWORD:password}
